@@ -1,0 +1,38 @@
+---
+title: "Code Book"
+author: "Allie Schleiff"
+date: "7/28/2020"
+output: html_document
+---
+
+#Study Design
+The data used is taken from Samsung and details data generated from phone accelerometers. There were 30 subjects performing a variety of activities.
+
+More information:https://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Data source: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+#Codebook
+
+1. The code downloads the file UCI Har Dataset if it does not exist. The dataset is then unzipped.
+
+2. Each variable is named based upon independent file titles. Names are:
+features
+activities
+subject_test
+x_test
+y_test
+subject_train
+x_train
+y_train
+
+3. Both X and Y data sets are combined into respective X and Y variables, then the subject data sets are combined into a subject variable. Finally, the three data sets are merged into merged_data.
+
+4. Means and standard deviations are then pulled from the merged_data file and placed into tidy_data.
+
+5. Activities are given a descriptive name and renamed within tidy_data.
+
+6. Data set variables within tidy_data are renamed to descriptive names.
+
+7. The file final_data is generated from tidy_data via grouping by subject and activity, then summarized as a mean. This is output as the text file "final_data".
+
+8. Success of the script is checked with str().
